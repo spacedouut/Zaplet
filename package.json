@@ -1,0 +1,49 @@
+{
+  "name": "zaplet",
+  "version": "1.0.0",
+  "description": "The web desktop that works how you do.",
+  "keywords": [
+    "WebOS",
+    "Web",
+    "Desktop",
+    "WebDesktop",
+    "OS"
+  ],
+  "homepage": "https://github.com/spacedouut/Zaplet#readme",
+  "bugs": {
+    "url": "https://github.com/spacedouut/Zaplet/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spacedouut/Zaplet.git"
+  },
+  "license": "MIT",
+  "author": "spacedouut",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "asbuild:debug": "asc assembly/kernel.ts --target debug --exportRuntime",
+    "asbuild:release": "asc assembly/kernel.ts --target release",
+    "asbuild": "npm run asbuild:debug && npm run asbuild:release",
+    "test": "node tests",
+    "start": "npx serve .",
+    "test:memory": "npm run asbuild:debug && node tests/memory.js"
+  },
+  "devDependencies": {
+    "assemblyscript": "^0.28.2",
+    "concurrently": "^9.2.0",
+    "typescript": "~5.8.3",
+    "vite": "^6.3.5"
+  },
+  "dependencies": {
+    "@assemblyscript/loader": "^0.28.2"
+  },
+  "exports": {
+    ".": {
+      "import": "./build/release.js",
+      "types": "./build/release.d.ts"
+    }
+  }
+}

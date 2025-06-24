@@ -1,0 +1,24 @@
+{
+  "extends": "assemblyscript/std/assembly.json",
+  "targets": {
+    "release": {
+      "binaryFile": "assembly/kernel.wasm",
+      "textFile": "assembly/kernel.wat",
+      "sourceMap": true,
+      "optimize": true,
+      "noAssert": true,
+      "initialMemory": 2048,
+      "maximumMemory": 2048
+    },
+    "debug": {
+      "binaryFile": "assembly/kernel.debug.wasm",
+      "textFile": "assembly/kernel.debug.wat",
+      "sourceMap": true,
+      "optimize": false,
+      "noAssert": false,
+      "initialMemory": 2048,
+      "maximumMemory": 2048
+    }
+  },
+  "include": ["assembly/**/*.ts"]
+}
