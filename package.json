@@ -27,7 +27,7 @@
     "asbuild:debug": "asc assembly/kernel.ts --target debug --exportRuntime",
     "asbuild:release": "asc assembly/kernel.ts --target release",
     "asbuild": "npm run asbuild:debug && npm run asbuild:release",
-    "test": "node tests",
+    "test": "npm run asbuild:debug && node tests",
     "start": "npx serve .",
     "test:memory": "npm run asbuild:debug && node tests/memory.js"
   },

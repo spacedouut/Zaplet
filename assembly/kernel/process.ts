@@ -1,4 +1,4 @@
-import { alloc, free } from "./memory";
+import { alloc_user as alloc, free_user as free } from "./memory";
 
 const MAX_PROCESSES = 1024;
 let next_pid = 0;
